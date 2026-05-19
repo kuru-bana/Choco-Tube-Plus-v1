@@ -1,0 +1,25 @@
+{
+  "name": "choco-tube-plus",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build && vite build --config vite.config.single.ts && cp dist-single/index.html dist/index.txt && rm -rf dist-single",
+    "build:named": "tsc -b && vite build --config vite.config.named.ts && mv ../dist-named/index.html ../dist-named/index.html.txt",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.11",
+    "vite-plugin-singlefile": "^2.3.2"
+  }
+}
