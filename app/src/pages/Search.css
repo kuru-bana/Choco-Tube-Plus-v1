@@ -1,0 +1,220 @@
+.search-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.search-page .video-grid,
+.search-page .loading-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.filter-bar {
+  margin: -20px -20px 0;
+  background: rgba(5, 9, 20, 0.85);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.18);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: sticky;
+  top: 61px;
+  z-index: 90;
+  box-shadow: 0 2px 20px rgba(124, 58, 237, 0.08);
+}
+
+.filter-bar-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.filter-select,
+.features-toggle {
+  background: rgba(22, 14, 58, 0.85);
+  color: var(--text-color);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  backdrop-filter: blur(10px);
+}
+
+.filter-select:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.filter-select:focus,
+.filter-select:hover,
+.features-toggle:hover,
+.features-toggle.active {
+  border-color: var(--accent-bright);
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+}
+
+.region-select-sm {
+  max-width: 170px;
+}
+
+.features-wrap {
+  position: relative;
+}
+
+.features-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  max-width: 190px;
+}
+
+.features-toggle span:first-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.features-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: rgba(10, 6, 30, 0.96);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 12px;
+  padding: 10px 14px;
+  z-index: 200;
+  min-width: 165px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6), 0 0 20px rgba(124, 58, 237, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  backdrop-filter: blur(20px);
+}
+
+.features-dropdown[hidden] {
+  display: none;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-color);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.feature-item:hover {
+  color: #c4b5fd;
+}
+
+.feature-item input[type="checkbox"] {
+  accent-color: var(--accent-bright);
+}
+
+.result-header {
+  font-size: 0.88rem;
+  color: #6b7494;
+}
+
+.search-error {
+  background: rgba(80, 17, 35, 0.82);
+  border: 1px solid rgba(236, 72, 153, 0.45);
+  color: #fecdd3;
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+.search-empty {
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 20px;
+  padding-bottom: 36px;
+}
+
+.page-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(22, 14, 58, 0.85);
+  color: var(--text-color);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 10px;
+  padding: 9px 20px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+  backdrop-filter: blur(10px);
+}
+
+.page-btn:hover:not(:disabled) {
+  border-color: var(--accent-bright);
+  box-shadow: 0 0 14px var(--glow-purple);
+  background: rgba(124, 58, 237, 0.15);
+}
+
+.page-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.page-info {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  min-width: 60px;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .filter-label { display: none; }
+  .filter-bar { top: 55px; }
+}
+
+@media (max-width: 1231px) {
+  .search-page .video-grid,
+  .search-page .loading-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 927px) {
+  .search-page .video-grid,
+  .search-page .loading-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 623px) {
+  .search-page .video-grid,
+  .search-page .loading-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
