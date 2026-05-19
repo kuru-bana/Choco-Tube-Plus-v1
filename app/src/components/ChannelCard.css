@@ -1,0 +1,94 @@
+.channel-card {
+  grid-column: 1 / -1;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.22s, border-color 0.22s, box-shadow 0.22s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  backdrop-filter: blur(12px);
+}
+
+.channel-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-bright);
+  box-shadow: 0 0 20px var(--glow-purple), 0 0 8px var(--glow-cyan), 0 10px 28px rgba(0,0,0,0.5);
+}
+
+.channel-card-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.channel-card-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--skeleton-base);
+  flex-shrink: 0;
+  border: 2px solid rgba(139, 92, 246, 0.4);
+  box-shadow: 0 0 14px rgba(124, 58, 237, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.channel-card-icon.loaded { opacity: 1; }
+
+.channel-card-icon-placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--surface2);
+  flex-shrink: 0;
+  border: 2px solid var(--border);
+}
+
+.channel-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.channel-card-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.verified-badge {
+  background: var(--accent-bright);
+  color: #0d0820;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  font-size: 0.65rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.channel-card-subs {
+  font-size: 0.83rem;
+  color: #7c86b0;
+}
+
+.channel-card-desc {
+  color: #4b5680;
+  font-size: 0.82rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 500px;
+}
