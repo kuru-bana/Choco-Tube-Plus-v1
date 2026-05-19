@@ -1,0 +1,118 @@
+.hashtag-page {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+
+.hashtag-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 0 18px;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.hashtag-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fa9d5a, #c97638);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.hashtag-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fa9d5a;
+  margin: 0 0 2px;
+}
+
+.hashtag-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted, #94a3b8);
+  margin: 0;
+}
+
+.hashtag-error {
+  color: #e88;
+  margin: 1rem 0;
+}
+
+.hashtag-empty {
+  color: var(--text-muted, #94a3b8);
+  text-align: center;
+  margin: 3rem 0;
+  font-size: 0.95rem;
+}
+
+.hashtag-loading {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.hashtag-skel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hashtag-skel-thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 6px;
+  background: var(--skeleton-base, #1e2940);
+  animation: shimmer 1.4s infinite;
+}
+
+.hashtag-skel-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hashtag-skel-line {
+  height: 10px;
+  border-radius: 4px;
+  background: var(--skeleton-base, #1e2940);
+  animation: shimmer 1.4s infinite;
+}
+.hashtag-skel-line.long { width: 85%; }
+.hashtag-skel-line.short { width: 55%; }
+
+@keyframes shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+.hashtag-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.hashtag-page-btn {
+  background: var(--card-bg, #111827);
+  color: #fa9d5a;
+  border: 1px solid #fa9d5a55;
+  border-radius: 6px;
+  padding: 7px 18px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+.hashtag-page-btn:hover {
+  background: rgba(250, 157, 90, 0.12);
+}
+
+.hashtag-page-num {
+  font-size: 0.9rem;
+  color: var(--text-muted, #94a3b8);
+}
