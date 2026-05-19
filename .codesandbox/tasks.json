@@ -1,0 +1,33 @@
+{
+  "$schema": "https://unpkg.com/@codesandbox/tasks/schema.json",
+  "version": "0.1",
+  "name": "Choco-Tube-Plus",
+  "tasks": {
+    "install": {
+      "name": "Install dependencies",
+      "command": "cd app && npm install && cd ../server && npm install",
+      "runAtStart": true
+    },
+    "build-frontend": {
+      "name": "Build frontend",
+      "command": "cd app && npm run build",
+      "runAtStart": false
+    },
+    "backend": {
+      "name": "Start backend",
+      "command": "cd server && node server.js",
+      "runAtStart": true,
+      "preview": {
+        "port": 3001
+      }
+    },
+    "frontend-dev": {
+      "name": "Start frontend (dev)",
+      "command": "cd app && npm run dev",
+      "runAtStart": true,
+      "preview": {
+        "port": 5000
+      }
+    }
+  }
+}
