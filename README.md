@@ -1,4 +1,4 @@
-# Choco-Tube-Plus
+# Choco-Tube(?)
 
 A YouTube frontend client that lets you browse and watch YouTube content without ads, using multiple API backends for resilience.
 
