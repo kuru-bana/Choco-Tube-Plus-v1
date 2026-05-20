@@ -22,7 +22,7 @@ router.get('/choco-chat-new', async (req, res) => {
 })
 
 router.get('/whats', (req, res) => {
-  res.json({ name: 'choco-tube-plus' })
+  res.json({ name: 'choco-tube-botu' })
 })
 
 export default router
